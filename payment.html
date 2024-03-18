@@ -97,7 +97,8 @@
                 <!-- Add more payment modes as needed -->
             </select>
             
-            <input type="button" value="Confirm" onclick="navigateToPayment()">
+            <input type="button" value="Confirm" onclick="navigateToPayment
+            ()">
         </form>
     </div>
 
@@ -110,10 +111,11 @@
         var quantity = "1"; // Default quantity
         // Set the form action dynamically
         document.getElementById("paymentForm").action = "payment2.html?productId=" + productId + "&quantity=" + quantity;
-        // Submit the form
-        document.getElementById("paymentForm").submit();
+        // Redirect to the payment2.html page
+        window.location.href = document.getElementById("paymentForm").action;
     }
 </script>
+
 
 </body>
 </html>
