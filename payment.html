@@ -40,7 +40,7 @@
         border-radius: 5px;
         box-sizing: border-box;
     }
-    input[type="submit"] {
+    input[type="button"] {
         background-color: #ff5722;
         color: #fff;
         border: none;
@@ -48,7 +48,7 @@
         cursor: pointer;
         border-radius: 5px;
     }
-    input[type="submit"]:hover {
+    input[type="button"]:hover {
         background-color: #f44336;
     }
 </style>
@@ -60,7 +60,7 @@
     <h2>Payment</h2>
 
     <div class="payment-form">
-        <form id="paymentForm" action="payment_process.php" method="post">
+        <form id="paymentForm" action="payment2.html" method="post">
             <label for="fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname" required>
             
@@ -97,20 +97,22 @@
                 <!-- Add more payment modes as needed -->
             </select>
             
-            <input type="submit" value="Confirm">
+            <input type="button" value="Confirm" onclick="navigateToPayment()">
         </form>
     </div>
 
 </div>
 
 <script>
-    document.getElementById("paymentForm").addEventListener("submit", function(event) {
-        var paymentMode = document.getElementById("paymentMode").value;
-        if (paymentMode === "") {
-            alert("Please select a payment mode.");
-            event.preventDefault();
-        }
-    });
+    function navigateToPayment() {
+        // Replace this with your logic to get the product ID dynamically
+        var productId = "your_product_id";
+        var quantity = "1"; // Default quantity
+        // Set the form action dynamically
+        document.getElementById("paymentForm").action = "payment2.html?productId=" + productId + "&quantity=" + quantity;
+        // Submit the form
+        document.getElementById("paymentForm").submit();
+    }
 </script>
 
 </body>
