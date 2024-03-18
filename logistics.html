@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics Tracking - MARJONS SHOP</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .tracking-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #ee4d2d;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        display: block;
+    }
+    input[type="submit"]:hover {
+        background-color: #ff6e4a;
+    }
+    .tracking-result {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Logistics Tracking</h2>
+
+    <div class="tracking-form">
+        <form action="#" method="post" id="trackingForm">
+            <label for="trackingNumber">Enter Tracking Number:</label>
+            <input type="text" id="trackingNumber" name="trackingNumber" required>
+            
+            <input type="submit" value="Track">
+        </form>
+    </div>
+
+    <div class="tracking-result" id="trackingResult">
+        <!-- Tracking information will be displayed here -->
+    </div>
+
+</div>
+
+<script>
+    // Simulate tracking functionality
+    document.getElementById("trackingForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var trackingNumber = document.getElementById("trackingNumber").value;
+        // Here you can implement logic to fetch tracking information using AJAX or any other method
+        // For simplicity, we'll just display a sample result
+        var resultHtml = "<h3>Tracking Information for " + trackingNumber + "</h3>";
+        resultHtml += "<p>Status: In transit</p>";
+        resultHtml += "<p>Estimated delivery date: March 25, 2024</p>";
+        document.getElementById("trackingResult").innerHTML = resultHtml;
+    });
+</script>
+
+</body>
+</html>
