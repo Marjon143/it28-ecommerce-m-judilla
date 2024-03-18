@@ -116,8 +116,8 @@
     function selectQuantity(productId) {
         var quantity = prompt("Enter quantity:");
         if (quantity != null && quantity != "") {
-            // You can perform further actions here, such as adding the product to the cart
-            alert("You selected " + quantity + " item(s) of Product " + productId + ".");
+            // Redirect to the payment page
+            window.location.href = "payment.html?productId=" + productId + "&quantity=" + quantity;
         }
     }
 </script>
