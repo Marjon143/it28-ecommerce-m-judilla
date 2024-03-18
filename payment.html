@@ -60,7 +60,7 @@
     <h2>Payment</h2>
 
     <div class="payment-form">
-        <form action="payment_process.php" method="post">
+        <form id="paymentForm" action="payment_process.php" method="post">
             <label for="fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname" required>
             
@@ -83,15 +83,35 @@
                 <option value="CA">Canada</option>
                 <option value="UK">United Kingdom</option>
                 <option value="AU">Australia</option>
-                <option value="AU">Philippines</option>
+                <option value="PH">Philippines</option>
                 <!-- Add more options as needed -->
             </select>
+
+            <!-- Payment mode selection -->
+            <label for="paymentMode">Payment Mode</label>
+            <select id="paymentMode" name="paymentMode" required>
+                <option value="">Select Payment Mode</option>
+                <option value="COD">Cash on Delivery (COD)</option>
+                <option value="GCASH">GCash</option>
+                <option value="PAYMAYA">PayMaya</option>
+                <!-- Add more payment modes as needed -->
+            </select>
             
-            <input type="submit" value="Make Payment">
+            <input type="submit" value="Confirm">
         </form>
     </div>
 
 </div>
+
+<script>
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        var paymentMode = document.getElementById("paymentMode").value;
+        if (paymentMode === "") {
+            alert("Please select a payment mode.");
+            event.preventDefault();
+        }
+    });
+</script>
 
 </body>
 </html>

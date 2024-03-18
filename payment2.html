@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Summary</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .order-summary {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .order-summary-item {
+        margin-bottom: 10px;
+    }
+    .total {
+        font-weight: bold;
+    }
+    .product-image {
+        max-width: 100px;
+        max-height: 100px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Order Summary</h2>
+
+    <div class="order-summary">
+        <div class="order-summary-item">
+            <img src="nike_shoes.jpg" alt="Nike Shoes" class="product-image">
+            <p><strong>Item:</strong> Nike Shoes</p>
+            <p><strong>Price:</strong> $50.00</p>
+            <p><strong>Quantity:</strong> 2</p>
+            <p><strong>Total:</strong> $100.00</p>
+        </div>
+        <div class="order-summary-item">
+            <img src="adidas_jacket.jpg" alt="Adidas Jacket" class="product-image">
+            <p><strong>Item:</strong> Adidas Jacket</p>
+            <p><strong>Price:</strong> $80.00</p>
+            <p><strong>Quantity:</strong> 1</p>
+            <p><strong>Total:</strong> $80.00</p>
+        </div>
+        <div class="total">
+            <p><strong>Total Amount:</strong> $180.00</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
