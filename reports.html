@@ -37,9 +37,9 @@
 </head>
 <body>
 
-<h2>Inventory Report</h2>
+<h2 style="text-align: center;">Inventory Report</h2>
 
-<table>
+<table id="inventoryTable">
     <thead>
         <tr>
             <th>Product Name</th>
@@ -77,6 +77,50 @@
     <div class="percentage">40%</div>
     <!-- Add more bars and percentages for different categories -->
 </div>
+
+<div>
+    <h3>Total Items Sold</h3>
+    <p id="totalItemsSold">0</p>
+</div>
+
+<div>
+    <h3>Total Items Unsold</h3>
+    <p id="totalItemsUnsold">45</p>
+</div>
+
+<div>
+    <h3>Shop Analysis</h3>
+    <p>Placeholder for shop analysis, additional information, charts, etc.</p>
+</div>
+
+<script>
+    // Function to update total items sold and unsold
+    function updateStatistics(productId, quantity) {
+        var totalItemsSoldElement = document.getElementById('totalItemsSold');
+        var totalItemsUnsoldElement = document.getElementById('totalItemsUnsold');
+
+        // Update total items sold
+        var totalItemsSold = parseInt(totalItemsSoldElement.textContent);
+        totalItemsSold += parseInt(quantity);
+        totalItemsSoldElement.textContent = totalItemsSold;
+
+        // Update total items unsold
+        var totalItemsUnsold = parseInt(totalItemsUnsoldElement.textContent);
+        totalItemsUnsold -= parseInt(quantity);
+        totalItemsUnsoldElement.textContent = totalItemsUnsold;
+    }
+
+    // Function to handle purchase
+    function selectQuantity(productId) {
+        var quantity = prompt("Enter quantity:");
+        if (quantity != null && quantity != "") {
+            // Redirect to the payment page
+            // window.location.href = "payment.html?productId=" + productId + "&quantity=" + quantity;
+            // For demonstration purposes, let's just update the statistics directly
+            updateStatistics(productId, quantity);
+        }
+    }
+</script>
 
 </body>
 </html>
