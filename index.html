@@ -110,7 +110,7 @@
 
     <h2>MARJON SHOE SHOP</h2>
 
-    <div class="product">
+    <div class="product" style="display: flex;">
         <div class="product-item" data-product-id="1" data-quantity="0" data-available="10">
             <img src="" alt="Product 1">
             <div class="product-info">
@@ -125,6 +125,36 @@
                 <div class="available">Available: <span>10</span></div>
             </div>
         </div>
+        <div class="product">
+            <div class="product-item" data-product-id="1" data-quantity="0" data-available="10">
+                <img src="" alt="Product 1">
+                <div class="product-info">
+                    <div class="product-name">Nike</div>
+                    <div class="product-price">₱400.00</div>
+                    <div class="quantity-selector">
+                        <button class="quantity-button" onclick="decrementQuantity(this)">-</button>
+                        <span>0</span>
+                        <button class="quantity-button" onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="selectQuantity(1)">BUY</button>
+                    <div class="available">Available: <span>10</span></div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-item" data-product-id="1" data-quantity="0" data-available="10">
+                    <img src="" alt="Product 1">
+                    <div class="product-info">
+                        <div class="product-name">Nike</div>
+                        <div class="product-price">₱400.00</div>
+                        <div class="quantity-selector">
+                            <button class="quantity-button" onclick="decrementQuantity(this)">-</button>
+                            <span>0</span>
+                            <button class="quantity-button" onclick="incrementQuantity(this)">+</button>
+                        </div>
+                        <button class="buy-button" onclick="selectQuantity(1)">BUY</button>
+                        <div class="available">Available: <span>10</span></div>
+                    </div>
+                </div>
         <!-- Add more product items as needed -->
     </div>
 
