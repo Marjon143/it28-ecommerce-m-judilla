@@ -1,115 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Chat</title>
-<style>
-    /* Chat Icon Styles */
-    .chat-icon {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #4CAF50;
-        color: white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 24px;
-        line-height: 60px;
-        cursor: pointer;
-    }
-
-    /* Chat Window Styles */
-    .chat-window {
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        width: 300px;
-        max-height: 400px;
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-        display: none;
-    }
-
-    .chat-header {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .chat-body {
-        padding: 10px;
-        overflow-y: auto;
-    }
-
-    .chat-message {
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 5px;
-        margin-bottom: 5px;
-    }
-
-    .chat-input {
-        width: calc(100% - 20px);
-        padding: 10px;
-        margin: 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        resize: none;
-    }
-
-    .send-button {
-        width: calc(100% - 20px);
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Contact Customer Service</h1>
+        
+        <div class="contact-info">
+            <p>Email: info@example.com</p>
+            <p>Phone: +1234567890</p>
+            <p>Address: 123 Main St, City, Country</p>
+        </div>
+        
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-<div class="chat-icon" onclick="toggleChatWindow()">Chat</div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-<div class="chat-window" id="chatWindow">
-    <div class="chat-header" onclick="toggleChatWindow()">Customer Support</div>
-    <div class="chat-body" id="chatBody">
-        <!-- Chat messages will be displayed here -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    <textarea class="chat-input" id="chatInput" placeholder="Type your message..."></textarea>
-    <button class="send-button" onclick="sendMessage()">Send</button>
-</div>
-
-<script>
-    var chatWindow = document.getElementById("chatWindow");
-
-    function toggleChatWindow() {
-        chatWindow.style.display = (chatWindow.style.display === "none") ? "block" : "none";
-    }
-
-    function sendMessage() {
-        var message = document.getElementById("chatInput").value;
-        if (message.trim() !== "") {
-            var chatBody = document.getElementById("chatBody");
-            var chatMessage = document.createElement("div");
-            chatMessage.classList.add("chat-message");
-            chatMessage.textContent = message;
-            chatBody.appendChild(chatMessage);
-            document.getElementById("chatInput").value = "";
-            // Scroll to the bottom of the chat window
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-    }
-</script>
-
 </body>
 </html>
